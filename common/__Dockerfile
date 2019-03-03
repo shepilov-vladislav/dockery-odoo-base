@@ -17,7 +17,9 @@ RUN adduser --system --uid $APP_GID --ingroup odoo --home /opt/odoo --disabled-l
 COPY entrypoint* /
 COPY entrypoint.d /entrypoint.d
 COPY entrypoint.db.d /entrypoint.db.d
+COPY patch.py /patch.py
 COPY patches /patches
+COPY patches.txt /patches.txt
 
 # Own folders                //-- where pure bind mounting during dev in docker-compose doesn't yield correct file permissions
 RUN mkdir -p "${ODOO_PRST_DIR}" "${ODOO_BCKP_DIR}"
@@ -36,6 +38,7 @@ ENV LC_ALL en_US.UTF-8
 
 RUN /bin/bash -c 'shopt -s dotglob \
  && chmod +x /patches \
+ && chmod +x /patch.py \
  && chmod +x /entrypoint.sh \
  && chmod +x /usr/local/bin/* \
  && chmod +x /entrypoint.d/* \

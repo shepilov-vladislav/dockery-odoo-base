@@ -16,7 +16,7 @@ for path in $(find "${DIR}" -maxdepth 1 -type d -name 'v-*') ; do
 	cp -rp "${DIR}"/common/* "${path}/out/"
 	cp -rp "${path}"/spec/*  "${path}/out/"
 	find "${path}/out/" -name "__*" -type f -exec rm {} \+
-	cat "$path/spec/__patches" >> "$path/out/patches"
+	cat "$path/spec/__patches.txt" >> "$path/out/patches.txt"
 	cat "${DIR}"/common/__Dockerfile >> "$path/out/Dockerfile"
 	curl "https://raw.githubusercontent.com/odoo/odoo/${version}/requirements.txt" -o "${DIR}/${name}/out/requirements.txt"
 done
