@@ -1,0 +1,2 @@
+# odoo/tools/config.py - [PATCH] [IMP] config: support config folders
+https://github.com/xoe-labs/odoo-dev/compare/master...xoe-labs:master-NOPR-support-config-folder.patch

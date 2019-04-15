@@ -1,0 +1,2 @@
+# odoo/netsvc.py - [PATCH] [IMP] netsvc: add json logging capa on non tty
+https://github.com/xoe-labs/odoo-dev/compare/11.0...xoe-labs:11.0-NOPR-add-json-logging-on-non-tty.patch

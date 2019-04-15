@@ -1,0 +1,3 @@
+# odoo/service/db.py - [PATCH] [IMP] db: set default user tz through country code
+# https://patch-diff.githubusercontent.com/raw/odoo/odoo/pull/26365.patch
+https://github.com/xoe-labs/odoo-dev/compare/11.0...xoe-labs:11.0-db-set-user-timezone-to-country.patch

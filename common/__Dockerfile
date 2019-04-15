@@ -19,7 +19,7 @@ COPY entrypoint.d /entrypoint.d
 COPY entrypoint.db.d /entrypoint.db.d
 COPY patch.py /patch.py
 COPY patches /patches
-COPY patches.txt /patches.txt
+COPY patches.d /patches.d
 
 # Own folders                //-- where pure bind mounting during dev in docker-compose doesn't yield correct file permissions
 RUN mkdir -p "${ODOO_PRST_DIR}" "${ODOO_BCKP_DIR}"

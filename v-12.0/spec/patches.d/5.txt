@@ -1,0 +1,2 @@
+# odoo/tests/common.py - [PATCH] [FIX] tests: run chrome within containers
+https://patch-diff.githubusercontent.com/raw/odoo/odoo/pull/26456.patch

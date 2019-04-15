@@ -1,0 +1,3 @@
+# odoo/cli/scaffold.py - [PATCH] [IMP] scaffold: add cli convenience dialogue
+# Incorporates:          [PATCH] [IMP] scaffold: add json parameter to pass env
+https://github.com/xoe-labs/odoo-dev/compare/12.0...xoe-labs:12.0-BACKPORT--NOPR-add-cli-dialogue-to-scaffolding.patch
