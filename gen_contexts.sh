@@ -13,6 +13,7 @@ for path in $(find "${DIR}" -maxdepth 1 -type d -name 'v-*') ; do
 	name=$(basename "${path}")
 	version=${name#"v-"}
 	shopt -s extglob
+	rm -rf "${path}/out/patches.d"
 	cp -rp "${DIR}"/common/* "${path}/out/"
 	cp -rp "${path}"/spec/*  "${path}/out/"
 	find "${path}/out/" -name "__*" -type f -exec rm {} \+

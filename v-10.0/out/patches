@@ -21,8 +21,10 @@ function apply_patches_from_file() {
     fi
 }
 
+export PATCHES_BASEPATH="/patches.d"
+
 echo -e "\nApplying patches to ${apply_dir} ...\n"
-for patches_filename in /patches.d/*.txt
+for patches_filename in $(find "${PATCHES_BASEPATH}" -maxdepth 1 -mindepth 1 -xtype d | sort -r | xargs realpath --no-symlinks); do
 do
     :
     apply_patches_from_file $1 ${patches_filename}
