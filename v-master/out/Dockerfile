@@ -25,7 +25,7 @@ USER root
 
 # Library versions
 ENV ODOO_VERSION         master
-ENV PSQL_VERSION         10
+ENV PSQL_VERSION         11
 ENV WKHTMLTOX_VERSION    0.12.5
 ENV WKHTMLTOPDF_CHECKSUM 1140b0ab02aa6e17346af2f14ed0de807376de475ba90e1db3975f112fbd20bb
 ENV NODE_VERSION         6
@@ -138,11 +138,11 @@ RUN chmod +x /usr/local/bin/pyflame
 
 
 # Grab latest geoip DB       //-- to enable IP based geo-referncing
-RUN wget --quiet http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz \
-    && gunzip GeoLiteCity.dat.gz \
+RUN wget --quiet http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz -O /tmp/GeoLite2-City.tar.gz \
     && mkdir -p /usr/share/GeoIP \
-    && mv GeoLiteCity.dat /usr/share/GeoIP/ \
-    && pip --quiet --quiet install GeoIP
+    && tar -xf /tmp/GeoLite2-City.tar.gz -C /tmp/ \
+    && find /tmp/GeoLite2-City_* | grep "GeoLite2-City.mmdb" | xargs -I{} mv {} /usr/share/GeoIP/GeoLite2-City.mmdb \
+    && pip --quiet --quiet install geoip2
 
 # Grab latest json logger    //-- for easier parsing (Patch 0001)
 RUN pip --quiet --quiet install python-json-logger
